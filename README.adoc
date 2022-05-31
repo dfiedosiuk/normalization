@@ -1,0 +1,20 @@
+= Calendar
+:toc:
+
+Simple Calendar that allows you to add tasks. The application not allow the user to add overlapping (happening at the same time) tasks.
+
+== Dependencies
+* Java 8+
+* Scala 2.12+
+* scalatest 3.2+
+
+Specific dependencies in file _build.sbt_
+
+== How to run
+
+[source]
+sbt test
+
+== Troubleshooting
+
+Added task should be with specific date structure, for example: "11/03/14 09:00:00"
