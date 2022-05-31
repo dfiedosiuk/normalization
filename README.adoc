@@ -1,20 +1,27 @@
-= Calendar
+= Normalize
 :toc:
 
-Simple Calendar that allows you to add tasks. The application not allow the user to add overlapping (happening at the same time) tasks.
+Application is normalizing values in file. +
+Firstly app is reading file using scala.io.Source.Next app is finding max value and min value. Finally it normalize values with equation:
+[source]
+((x - min)/(max - min))*2 - 1
+
+(Given equation in the task is not matching results for the samples)
+[source]
+((x - min) * 2 / max - min) - 1
+
+All methods are using Iterators to read each line one on a time. This was made for reading big files.
+
+At the end app is writing results to file.
 
 == Dependencies
 * Java 8+
 * Scala 2.12+
-* scalatest 3.2+
 
 Specific dependencies in file _build.sbt_
 
 == How to run
 
 [source]
-sbt test
+sbt run
 
-== Troubleshooting
-
-Added task should be with specific date structure, for example: "11/03/14 09:00:00"
